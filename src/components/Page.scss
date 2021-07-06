@@ -1,4 +1,6 @@
 $left-column-width: 30%;
+$header-font-size: 20px;
+$sub-header-font-size: 15px;
 .container {
 
 }
@@ -7,6 +9,7 @@ $left-column-width: 30%;
     max-width: 100%;
     margin: 0 auto;
     border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .header{
     display: flex;
@@ -53,8 +56,9 @@ $left-column-width: 30%;
 }
 .content{
     display: flex;
+    padding: 15px 5px;
     &-left{
-        // width: 30%;
+        flex: 0 0 $left-column-width;
     }
 }
 .section{
@@ -71,12 +75,76 @@ $left-column-width: 30%;
         text-transform: uppercase;
     }
     &__content{
-        flex-grow: 0;
-        margin: 0;
         padding: 5px 10px 10px 35px;
+    }
+}
+
+.profile{
+    font-size: 15px;
+    text-align: justify;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+.column {
+    &__section {
+        margin-bottom: 15px;
+        &__title{
+            padding-bottom: 15px;
+            font-size: $header-font-size;
+        }
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 -15px;
+        }
+    }
+}
+.list-element {
+    display: block;
+}
+
+.technology{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px 15px 15px;
+    &__image{
+        width: 50px;
+        height: 50px;
+    }
+    &__name{
+        margin: 0;
+        padding-top: 10px;
+        font-size: $sub-header-font-size;
+    }
+}
+
+.experience-element {
+
+    &__title{
+        font-size: $header-font-size;
+        font-weight: bold;
+        letter-spacing: normal;
+    }
+    &__date{
+        font-size: 13px;
+        font-style: italic;
+    }
+    &__description{
+        line-height: 1.2;
+        padding-top: 10px;
+    }
+}
+
+.description{
+    &-header{
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: $sub-header-font-size;
+    }
+    &-content{
         font-size: 15px;
-        text-align: justify;
-        letter-spacing: 0.5px;
-        line-height: 1.5;
     }
 }

@@ -1,4 +1,9 @@
 {
-  "extends": ["airbnb"],
-  "plugins": ["prettier"]
+  "extends": ["airbnb", "eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["only-warn"],
+  "parser": "babel-eslint",
+  "rules": {
+    "react/jsx-indent": 1,
+    "jsx-quotes": ["error", "prefer-single"]
+  }
 }

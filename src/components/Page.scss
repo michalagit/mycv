@@ -75,7 +75,7 @@ $sub-header-font-size: 15px;
         text-transform: uppercase;
     }
     &__content{
-        padding: 5px 10px 10px 35px;
+        padding: 5px 10px 0 35px;
     }
 }
 
@@ -122,7 +122,7 @@ $sub-header-font-size: 15px;
 }
 
 .experience-element {
-
+    margin-bottom: 15px;
     &__title{
         font-size: $header-font-size;
         font-weight: bold;

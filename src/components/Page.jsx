@@ -3,9 +3,10 @@ import './Page.scss';
 import './reset.scss';
 import profile from '../images/profile.jpg';
 
-import { technologies, learning, experience } from '../data';
+import { technologies, learning, experience, education } from '../data';
 
 const Page = () => {
+  const dupa = '';
   return (
     <main className='page'>
       <div className='header'>
@@ -112,31 +113,37 @@ const Page = () => {
             </div>
             <div className='section__content'>
               {experience.map((exp) => (
-                <div className='experience-element'>
+                <div className='experience-element' key={exp.companyName}>
                   <h3 className='experience-element__title'>
                     {exp.companyName}
                   </h3>
                   <span className='experience-element__date'>
-                   {exp.timespan}
+                    {exp.timespan}
                   </span>
                   <p className='experience-element__description'>
                     <span className='description-header'>
                       Responsibilities:
                     </span>
-                    <span className='description-content' dangerouslySetInnerHTML={{__html: exp.responsibilities}}/>
+                    <span
+                      className='description-content'
+                      dangerouslySetInnerHTML={{ __html: exp.responsibilities }}
+                    />
                   </p>
                   <p className='experience-element__description'>
-                    <span className='description-header'>Technologies used:</span>
-                    <span className='description-content'>
-                      {exp.techStack}
+                    <span className='description-header'>
+                      Technologies used:
                     </span>
+                    <span
+                      className='description-content'
+                      dangerouslySetInnerHTML={{ __html: exp.techStack }}
+                    />
                   </p>
                   <p className='experience-element__description'>
                     <span className='description-header'>Tooling:</span>
-                    <span className='description-content'>
-                      &nbsp; Preparing PSD based front-end, estimating tasks,
-                      maintaining web applications
-                    </span>
+                    <span
+                      className='description-content'
+                      dangerouslySetInnerHTML={{ __html: exp.tooling }}
+                    />
                   </p>
                 </div>
               ))}
@@ -145,7 +152,34 @@ const Page = () => {
           <div className='section'>
             <div className='section__header'>
               <img src={profile} className='section__image' alt='profile img' />
-              <h3 className='section__title'>Profile</h3>
+              <h3 className='section__title'>Education</h3>
+            </div>
+            <div className='section__content'>
+              {education.map((edu) => (
+                <div className='experience-element' key={edu.schoolName}>
+                  <h3 className='experience-element__title'>
+                    {edu.schoolName}
+                  </h3>
+                  <span className='experience-element__date'>
+                    {edu.timespan}
+                  </span>
+                  <p className='experience-element__description'>
+                    <span
+                      className='description-content'
+                      dangerouslySetInnerHTML={{ __html: edu.description }}
+                    />
+                  </p>
+                  <p className='experience-element__description'>
+                    <span className='description-header'>
+                      Technologies used:
+                    </span>
+                    <span
+                      className='description-content'
+                      dangerouslySetInnerHTML={{ __html: edu.techStack }}
+                    />
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
